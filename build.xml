@@ -2,7 +2,7 @@
 	<property environment="env"/>
 	
 	<target name="release">
-		<zip destfile="build.zip" basedir="build" />
+		<zip destfile="build.zip" basedir="build" excludes="**/*.pdb"/> 
 		
 		<exec executable="github-release.exe">
 			<arg line="release -t build-${env.BUILD_ID}" />
